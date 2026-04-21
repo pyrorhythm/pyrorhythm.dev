@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+	--font-family-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+		"Inter var", "Inter", ui-sans-serif, system-ui, sans-serif;
+	--font-family-mono: "SF Mono", "Fira Code", "Cascadia Code", ui-monospace,
+		monospace;
+}
+
+
+:root {
+	--bg: #f5f5f7;
+	--bg-blob-a: rgba(88, 86, 214, 0.06);
+	--bg-blob-b: rgba(0, 122, 255, 0.045);
+
+	--surface: rgba(255, 255, 255, 0.72);
+	--surface-raised: rgba(252, 252, 254, 0.88);
+	--surface-inset: rgba(0, 0, 0, 0.03);
+	--surface-inset-hover: rgba(0, 0, 0, 0.055);
+
+	--text: #1d1d1f;
+	--text-2: #6e6e73;
+	--text-3: #aeaeb2;
+
+	--border: rgba(0, 0, 0, 0.07);
+	--border-strong: rgba(0, 0, 0, 0.11);
+
+	--accent: #0071e3;
+	--accent-dim: rgba(0, 113, 227, 0.08);
+	--accent-fg: #ffffff;
+
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+	--shadow-md: 0 1px 2px rgba(0, 0, 0, 0.04),
+		0 4px 16px rgba(0, 0, 0, 0.06), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+	--shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.06),
+		0 8px 24px rgba(0, 0, 0, 0.09), 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+
+	--r-sm: 8px;
+	--r-md: 12px;
+	--r-lg: 16px;
+	--r-xl: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #1c1c1e;
+		--bg-blob-a: rgba(88, 86, 214, 0.18);
+		--bg-blob-b: rgba(41, 151, 255, 0.11);
+
+		--surface: rgba(44, 44, 46, 0.82);
+		--surface-raised: rgba(58, 58, 60, 0.92);
+		--surface-inset: rgba(0, 0, 0, 0.22);
+		--surface-inset-hover: rgba(0, 0, 0, 0.32);
+
+		--text: #f5f5f7;
+		--text-2: #98989d;
+		--text-3: #636366;
+
+		--border: rgba(255, 255, 255, 0.06);
+		--border-strong: rgba(255, 255, 255, 0.11);
+
+		--accent: #2997ff;
+		--accent-dim: rgba(41, 151, 255, 0.12);
+
+		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.15),
+			0 0 0 0.5px rgba(255, 255, 255, 0.04);
+		--shadow-md: 0 1px 2px rgba(0, 0, 0, 0.2),
+			0 4px 16px rgba(0, 0, 0, 0.3), 0 0 0 0.5px rgba(255, 255, 255, 0.04);
+		--shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.28),
+			0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+	}
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font-family-sans,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Inter",
+			sans-serif);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg);
+	/* Sonoma-style ambient gradient blobs */
+	background-image: radial-gradient(ellipse 80% 70% at 15% 65%,
+			var(--bg-blob-a),
+			transparent),
+		radial-gradient(ellipse 60% 55% at 88% 18%, var(--bg-blob-b), transparent);
+	background-attachment: fixed;
+	color: var(--text);
+}
+
+/* ── Materials ──────────────────────────────────────────────────────────────── */
+
+.glass {
+	background: var(--surface);
+	backdrop-filter: blur(28px) saturate(180%);
+	-webkit-backdrop-filter: blur(28px) saturate(180%);
+	border: 0.5px solid var(--border-strong);
+	box-shadow: var(--shadow-md);
+}
+
+.glass-raised {
+	background: var(--surface-raised);
+	backdrop-filter: blur(32px) saturate(200%);
+	-webkit-backdrop-filter: blur(32px) saturate(200%);
+	border: 0.5px solid var(--border-strong);
+	box-shadow: var(--shadow-hover);
+}
