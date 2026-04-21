@@ -7,7 +7,9 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "bun run build && wrangler deploy",
+    "preview": "bun run build && wrangler dev"
   },
   "license": "MIT",
   "devDependencies": {
@@ -15,7 +17,8 @@
     "tailwindcss": "^4.1.13",
     "typescript": "^6.0.3",
     "vite": "^8",
-    "vite-plugin-solid": "3.0.0-next.5"
+    "vite-plugin-solid": "3.0.0-next.5",
+    "wrangler": "^4.84.0"
   },
   "dependencies": {
     "@solidjs/meta": "0.30.0-next.0",
