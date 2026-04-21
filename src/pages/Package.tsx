@@ -40,7 +40,7 @@ const PackagePage: Component<{ pkg: GoPackage }> = (props) => {
 				<div class="w-full max-w-[480px]">
 					<div class="mb-8">
 						<div class="inline-flex items-center gap-2 text-[13px] font-mono text-(--text-2) mb-4">
-							<img src="go.svg" class="size-8" />
+							<img src="../go.svg" class="size-8" />
 							<span>{importPath}</span>
 						</div>
 						<h1 class="text-[32px] font-semibold tracking-[-0.02em] text-(--text) leading-tight mb-2">
@@ -69,7 +69,7 @@ const PackagePage: Component<{ pkg: GoPackage }> = (props) => {
 							>
 								{copied() ? (
 									<>
-										<img src="check.svg" />
+										<img src="../check.svg" />
 										copied
 									</>
 								) : (
